@@ -1,0 +1,66 @@
+도커에 우분투 설치
+docker run -it --name first-ubuntu ubuntu /bin/bash
+
+p.145~146 docker network 설치
+docker network create wordpress000net1
+
+docker run --name mysql000ex11 -dit --net=wordpress000net1 -e MYSQL_ROOT_PASSWORD=myrootpass -e MYSQL_DATABASE=wordpress000db -e MYSQL_USER=wordpress000kun -e MYSQL_PASSWORD=wkunpass mysql:8.0.33 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --default-authentication-plugin=mysql_native_password
+
+docker run --name wordpress000ex12 -dit --net=wordpress000net1 -p 8085:80 -e WORDPRESS_DB_HOST=mysql000ex11 -e WORDPRESS_DB_NAME=wordpress000db -e WORDPRESS_DB_USER=wordpress000kun -e WORDPRESS_DB_PASSWORD=wkunpass wordpress
+--------------------------------------------------------------
+
+p102~p110 docker 명령어
+
+docker rm $(docker ps -qa):
+docker rmi $(docker images -q): 이미지 한번에 삭제
+
+도커 데스크탑 Files -> /usr/local/apache2/htdocs/index.html
+
+[도커 명령어]
+exit 빠져나오기
+docker exec -it first-ubuntu /bin/bash 다시 들어가기
+
+docker run --name 이름 -d httpd
+docker run --name apa000ex2 -d -p 8880:80 httpd
+docker ps -a: 컨테이너 목록
+docker ps -qa: 컨테이너 목록(ID)
+docker start 컨테이너ID: 시작
+docker stop 컨테이너ID: 멈춤
+docker rm 컨테이너ID: 제거
+docker image ls : 이미지 목록
+docker image rm 이미지ID: 이미지 제거
+
+복사 명령어
+docker cp 컨테이너이름:/usr/local/apache2/htdocs/index.html
+docker cp index.html 컨테이너이름:/usr/local/apache2/htdocs
+
+p122
+docker run --name nginx000ex6 -d -p 8884:80 nginx
+
+p124
+docker run --name mysql000ex7 -dit -e MYSQL_ROOT_PASSWORD=1234 mysql
+
+docker exec -it mysql000ex7 mysql -u root -p
+------------------------------------------------------
+
+Mysql 명령어
+
+show databases;
+create database TEST;
+use TEST;
+create table dept (
+    -> deptno int(11),
+    -> dname varchar(14),
+    -> loc varchar(13));
+show tables;
+desc dept;
+insert into dept (deptno, dname, loc) values (
+    -> 10, 'Account', 'Seoul');
+select * from dept;
+
+------------------------------------------------------
+apt-get update
+
+apt-get install vim -y
+
+apt-get install default-jdk -y

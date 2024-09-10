@@ -1,0 +1,11 @@
+[24-07-19]
+docker run --name mysql0719 -p 3306:3306 -d -e MYSQL_ROOT_PASSWORD=1234 -e MYSQL_DATABASE=spring5fs -e MYSQL_USER=spring5 -e MYSQL_PASSWORD=spring5 mysql:8.0.33
+
+docker run --name nginx000ex6 -d -p 8084:80 nginx
+
+버츄얼박스 - 도구 - 네트워크 - 포트 포워딩
+8084 10.0.2.4 8084
+3306 10.0.2.4 3306
+
+
+호스트 전용 네트워크 - IPv4주소 + :8084로 접속

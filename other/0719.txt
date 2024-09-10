@@ -1,0 +1,9 @@
+VirtualBox-7.0.18-162988-Win
+ubuntu-22.04.4-live-server-amd64
+----------------------------------
+lombok
+mysql-connector-j-8.0.33
+
+C드라이브에 _jar 폴더에 넣기
+
+java 프로젝트 우클릭 빌드패스 맨 아래

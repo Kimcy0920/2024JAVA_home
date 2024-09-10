@@ -1,0 +1,6 @@
+JDBC설치
+
+mysql jdbc 다운로드 https://downloads.mysql.com/archives/c-j/
+8.0.33 / Plalform Independent / ZIP파일
+
+mysql-connector-j-8.0.33.jar -> C:\_jar

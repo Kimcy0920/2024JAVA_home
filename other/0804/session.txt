@@ -1,0 +1,28 @@
+중첩클래스, 익명객체, 스레드관련, 스트림관련, ------나중에) 파일입출력
+
+<%
+request.setCharacterEncoding("utf-8");
+String id = request.getParameter("id");
+String pw = request.getParameter("pw");
+String name = request.getParameter("name");
+
+memberDAO dao = new memberDAO();
+memberDTO dto = dao.memberCheck(name);
+
+if (dto != null) {
+%>
+<script>
+	alert('이미 등록된 아이디입니다.');
+	history.back()
+</script>
+<%          
+} else {
+	dto = new memberDTO(id, pw, name);
+%>
+<script>
+	alert('가입이 완료되었습니다.');
+	window.close();
+</script>
+<%
+}
+%>

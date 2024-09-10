@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BoardMapper">
+
+	<select id="getNumRecords" resultType="int">
+		SELECT COUNT(*) FROM board
+	</select>
+
+	<select id="selectOne" parameterType="int" resultType="board.BoardDTO">
+		SELECT * FROM board WHERE num = #{num}
+	</select>
+
+	<select id="selectList" parameterType="map" resultType="board.BoardDTO">
+		<![CDATA[
+		SELECT *
+		FROM
+		(SELECT ROWNUM AS RNUM, T1.*
+		   FROM (select * from board order by num DESC) T1
+		  WHERE
+		 ROWNUM <= #{listSize}
+		)
+		WHERE #{start} <= RNUM
+	]]>
+	</select>
+
+	<update id="updateHits" parameterType="int">
+		UPDATE board SET hits = hits + 1 WHERE num = #{num}
+	</update>
+
+	<update id="updateOne" parameterType="board.BoardDTO">
+		UPDATE board SET
+		writer = #{writer}, title = #{title}, content = #{content}
+		WHERE num = #{num}
+	</update>
+
+	<insert id="insertOne" parameterType="board.BoardDTO">
+		INSERT INTO board(num, writer, title, content, regtime, hits)
+		VALUES (board_seq.nextval, #{writer}, #{title}, #{content}, #{regtime}, 0)
+	</insert>
+
+	<delete id="deleteOne" parameterType="int">
+		DELETE FROM board WHERE num = #{num}
+	</delete>
+	
+	<delete id="deleteWriter" parameterType="String">
+		DELETE FROM board WHERE writer = #{writer}
+	</delete>
+</mapper>
