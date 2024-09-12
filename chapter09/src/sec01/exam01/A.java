@@ -6,9 +6,9 @@ class A {
 	class B {
 		B() { System.out.println("B ��ü�� ������"); }
 		int field1;
-		static int field2;
+//		static int field2;
 		void method1() {}
-		static void method2() {}
+//		static void method2() {}
 	}
 	
 	static class C {

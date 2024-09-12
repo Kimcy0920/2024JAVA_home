@@ -1,0 +1,14 @@
+[글쓰기 구조]
+list_view -> writeForm.do(글쓰기) ->
+board.WriteFormHandler -> return "writeForm.jsp" ->
+writeForm.jsp(입력) -> write.do ->
+board.WriteHandler -> return "writeResult.jsp" ->
+게시글 등록/목록/읽기 || 에러
+
+[댓글 구조]
+read_view -> replyForm.do ->
+board.ReplyFormHandler -> return "reply_form.jsp" ->
+reply_form.jsp(입력) -> reply.do ->
+board.ReplyHandler -> return "reply_success.jsp || reply_error.jsp"
+
+jsp, handler 변수명 일치하는지 확인하기

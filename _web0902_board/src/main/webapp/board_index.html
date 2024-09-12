@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board Table</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Board Table</h1>
+        
+        <h2>Create Board</h2>
+        <form id="createForm" class="mb-4"> <!-- form태그에 action, method가 없으면 자바스크립트 사용한다는 의미 -->
+            <input type="hidden" name="action" value="create"> <!-- hidden: form에서 안보임 -->
+            <div class="form-group">
+                <label for="writer">Writer:</label> <!-- label for="ename" 이름표같은 역할, 그룹으로 묶어줌 -->
+                <input type="text" class="form-control" id="writer" name="writer" required>
+            </div>
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" class="form-control" id="title" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="content">Content:</label>
+                <input type="text" class="form-control" id="content" name="content" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+
+        <h2>Read Boards</h2>
+        <button id="readButton" class="btn btn-info mb-4">Read All Boards</button>
+        <div id="readResult" class="mb-4"></div>
+
+        <h2>Update Board</h2>
+        <form id="updateForm" class="mb-4">
+            <input type="hidden" name="action" value="update">
+            <div class="form-group">
+                <label for="updateNum">Number:</label>
+                <input type="number" class="form-control" id="updateNum" name="num" required>
+            </div>
+            <div class="form-group">
+                <label for="updateWriter">Writer:</label>
+                <input type="text" class="form-control" id="updateWriter" name="writer" required>
+            </div>
+            <div class="form-group">
+                <label for="updateContent">Content:</label>
+                <input type="text" class="form-control" id="updateContent" name="content" required>
+            </div>
+            <button type="submit" class="btn btn-warning">Update</button>
+        </form>
+        
+        <h2>Delete Board</h2>
+        <form id="deleteForm" class="mb-4">
+        <input type="hidden" name="action" value="delete">
+        <div class="form-group">
+                <label for="deleteNum">Number:</label>
+                <input type="number" class="form-control" id="deleteNum" name="num" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Delete</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script.js"></script> <!-- 제이쿼리 버전 -->
+</body>
+</html>

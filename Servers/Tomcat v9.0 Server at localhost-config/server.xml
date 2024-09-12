@@ -160,20 +160,20 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="web0802_session" path="/web0802_session" reloadable="true" source="org.eclipse.jst.jee.server:web0802_session"/>
-      <Context docBase="web0802_sessionMember" path="/web0802_sessionMember" reloadable="true" source="org.eclipse.jst.jee.server:web0802_sessionMember"/>
-      <Context docBase="web0802_kimcy" path="/web0802_kimcy" reloadable="true" source="org.eclipse.jst.jee.server:web0802_kimcy"/>
-      
-      <Context docBase="web0801" path="/web0801" reloadable="true" source="org.eclipse.jst.jee.server:web0801"/>
       
       
-      <Context docBase="web0812_Mybatis" path="/web0812_Mybatis" reloadable="true" source="org.eclipse.jst.jee.server:web0812_Mybatis"/>
-      <Context docBase="_mvc0814" path="/_mvc0814" reloadable="true" source="org.eclipse.jst.jee.server:_mvc0814"/>
-      <Context docBase="web0813_fileUp" path="/web0813_fileUp" reloadable="true" source="org.eclipse.jst.jee.server:web0813_fileUp"/>
-      <Context docBase="_mvc0819_kcy" path="/_mvc0819_kcy" reloadable="true" source="org.eclipse.jst.jee.server:_mvc0819_kcy"/>
       
       
-      <Context docBase="_web0830_board" path="/_web0830_board" reloadable="true" source="org.eclipse.jst.jee.server:_web0830_board"/><Context docBase="_web0830_2" path="/_web0830_2" reloadable="true" source="org.eclipse.jst.jee.server:_web0830_2"/><Context docBase="_web0830" path="/_web0830" reloadable="true" source="org.eclipse.jst.jee.server:_web0830"/></Host>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <Context docBase="_mvc0910" path="/_mvc0910" reloadable="true" source="org.eclipse.jst.jee.server:_mvc0910"/><Context docBase="chap17" path="/chap17" reloadable="true" source="org.eclipse.jst.jee.server:chap17"/></Host>
     </Engine>
   </Service>
 </Server>
